@@ -1,0 +1,95 @@
+body{
+    background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+    font-size: 13px;
+}
+
+.container{
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.month{
+    display: flex;
+    justify-content: center;
+    background-color: #acbed7;
+    margin-left: -10px;
+}
+
+.month-days{
+    display: flex;
+    flex-direction: row;
+    background-color: #acbed7;
+    margin-left: -10px;
+}
+
+.month-days__day{
+    margin-left: 10px;
+}
+
+.month-days__day:first-child{
+    margin-left: 0;
+}
+
+.days{
+    font-size: 10px;
+}
+
+.days--string{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    margin-top: 7px;
+    justify-content: space-between;
+
+}
+
+
+label {
+    display: block;
+    position: relative;
+    padding-right: 20px;
+}
+
+label input {
+    display: none;
+}
+label span {
+    border: .5px solid #DCDCDC ;
+    width: 29px;
+    height: 19px;
+    position: absolute;
+    overflow: hidden;
+    line-height: 1.5;
+    text-align: center;
+
+    font-size: 10pt;
+    right: 0;
+    top: 50%;
+    margin-top: -7.5px;
+}
+
+label span:hover {
+    background-color: #b1aca2;
+}
+
+input:checked + span {
+    background: #d2b39c;
+    border-color: #ccf;
+}
+
+.days--string__noactday + span {
+    background: #dddde2;
+    border-color: #ccf;
+    color: grey;
+    cursor: not-allowed;
+
+}
+
+.days--string__holiday + span{
+    background: #a2d4df;
+    border-color: #ccf;
+}
+
+.days--string__dayOff + span {
+    color: grey;
+}

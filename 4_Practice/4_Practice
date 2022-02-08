@@ -1,0 +1,75 @@
+//1)    Cоздать функцию, которая возвращает true или false, в зависимости от
+// того, может ли сумма любых двух чисел из массива быть равной заданному значению.
+function sum(a){
+
+    let arr = [1,2,4,9]
+    let result = false;
+
+    for (let i = 0; i <arr.length;i++){
+        for (let j = i+1; j < arr.length; j++){
+            if( a === arr[i] + arr[j]){
+            result = true;
+            }
+        }
+    }
+
+    return result;
+}
+//console.log(sum(8))
+
+
+//2)    Напишите функцию, которая преобразует глубокий массив в одномерный.
+// Не используйте array.flat()
+// Ожидаемый результат: [1, 2, [3, 4, [5]]] => [1, 2, 3, 4, 5]
+
+function OneDimArr(){
+    let arr = [1, 2, [3, 4, [5]]];
+
+    let arrey = arr.toString().split(',');
+    return arrey;
+}
+//console.log(OneDimArr());
+
+
+//3)    Напишите функцию, которая разделяет массив на части заданного размера.
+//      Ожидаемый результат: ([1, 2, 3, 4, 5], 2) => [[1, 2], [3, 4], [5]]
+function sliceArr(){
+
+let array = [1, 2, 3, 4, 5];
+let array_size = 2;
+let sliced_array = [];
+
+    for (let i = 0; i <array.length; i += array_size) {
+        sliced_array.push(array.slice(i, i + array_size));
+    }
+
+return sliced_array
+}
+//console.log(sliceArr());
+
+
+//4)    Напишите функцию, которая поверхностно сравнивает два объекта.
+function compare(obj1, obj2) {
+    const props1 = Object.getOwnPropertyNames(obj1);
+    const props2 = Object.getOwnPropertyNames(obj2);
+    let result = true;
+
+    if (props1.length !== props2.length) {
+        result = false
+        return result;
+    }
+
+    for (let i = 0; i < props1.length; i += 1) {
+        const prop = props1[i];
+
+        if (obj1[prop] !== obj2[prop]) {
+            result = false
+            return result;
+        }
+    }
+
+    return result;
+}
+/*const obj1 = {a: 1,b: 2};
+const obj2 = {a: 1,b: 3};
+console.log(compare(obj1, obj2));*/
